@@ -1,0 +1,23 @@
+.flat-container{
+padding: 20px;
+}
+.flat-img{
+    width:200px;
+    height:200px;
+}
+a{
+    text-decoration: none;
+    width:200px;
+}
+
+td,th{
+   
+    height: 200px;
+    text-align: center;
+   
+}
+
+.flat-container-header{
+    display: flex;
+    gap: 40px;
+}
