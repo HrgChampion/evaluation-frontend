@@ -2,5 +2,6 @@
     display: flex;
     background: rgb(186, 176, 176);
     height : 60px;
+    gap:80px;
   
 }

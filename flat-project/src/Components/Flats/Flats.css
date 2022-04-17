@@ -7,17 +7,26 @@ padding: 20px;
 }
 a{
     text-decoration: none;
-    width:200px;
+  
 }
 
 td,th{
-   
-    height: 200px;
-    text-align: center;
+    width: 200px;
+    
+    
    
 }
+table{
+    width: 100%;
+}
+
+
 
 .flat-container-header{
     display: flex;
     gap: 40px;
 }
+.reduce{
+    width: -100px;
+}
+

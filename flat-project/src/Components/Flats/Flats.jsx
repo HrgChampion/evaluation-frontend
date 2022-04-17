@@ -151,13 +151,17 @@ export const Flats=()=>{
         <table>
             <thead>
                 <tr>
-                    <th>Resident Type</th>
+                    <th >
+                    <th >Resident Type</th>
                     <th>Flat No</th>
                     <th>Block</th>
                     <th>Total Residents</th>
                     <th>Image</th>
+                    </th>
+                    
                 </tr>
             </thead>
+            <br/><br/>
           {flats.map((flat,index)=>{
                 return(
                     <tbody key={flat._id}>
@@ -165,10 +169,10 @@ export const Flats=()=>{
                         <tr>
                         
                             <td className='widthclass'>{flat.Resident_Type}</td>
-                            <td>{flat.Flat_No}</td>
-                            <td>{flat.Block}</td>
-                            <td>{flat.Total_Residents}</td>
-                            <td><img  className="flat-img" src={flat.Image} alt="flat"/></td>
+                            <td className='widthclass'>{flat.Flat_No}</td>
+                            <td className='widthclass'>{flat.Block}</td>
+                            <td className='widthclass'>{flat.Total_Residents}</td>
+                            <td ><img  className="flat-img" src={flat.Image} alt="flat"/></td>
                             
                         </tr>
                         </Link>

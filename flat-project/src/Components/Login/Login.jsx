@@ -9,7 +9,8 @@ export const Login=()=>{
 
     })
 
-    const addUser=()=>{
+    const addUser=(e)=>{
+        e.preventDefault();
         axios.post(`http://localhost:2345/login`,{
             email:user.email,
             password:user.password,

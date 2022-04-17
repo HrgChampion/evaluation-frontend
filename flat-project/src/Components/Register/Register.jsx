@@ -9,8 +9,9 @@ export const Register=()=>{
 
     })
 
-    const addUser=()=>{
-        axios.post(`http://localhost:2345/register`,{
+    const addUser=(e)=>{
+        e.preventDefault();
+        axios.post("http://localhost:2345/register",{
             email:user.email,
             password:user.password,
 
