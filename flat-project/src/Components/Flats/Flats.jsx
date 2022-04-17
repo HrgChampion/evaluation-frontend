@@ -20,7 +20,7 @@ export const Flats=()=>{
     },[]);
 
     const getALLFlats=()=>{
-        axios.get("http://localhost:2345/flats")
+        axios.get("https://evaluationsserver.herokuapp.com/flats")
         .then(res=>{
             
             setFlats(res.data.flats);
@@ -34,7 +34,7 @@ export const Flats=()=>{
 
 
     const handleChangeBlock=(event)=>{
-        axios.get(`http://localhost:2345/flats/block/${event.target.value}`)
+        axios.get(`https://evaluationsserver.herokuapp.com/flats/block/${event.target.value}`)
         .then(res=>{
            // console.log(res,event.target.value)
             setFlats(res.data);
@@ -45,7 +45,7 @@ export const Flats=()=>{
     }
 
     const handleChangeResident=(event)=>{
-        axios.get("http://localhost:2345/flats/"+event.target.value)
+        axios.get("https://evaluationsserver.herokuapp.com/flats/"+event.target.value)
         .then(res=>{
             //console.log(res.data);
             setFlats(res.data);
@@ -55,7 +55,7 @@ export const Flats=()=>{
         })
     }
     const sortAsc=()=>{
-        axios.get("http://localhost:2345/flats/sort/asc")
+        axios.get("https://evaluationsserver.herokuapp.com/flats/sort/asc")
         .then(res=>{
             console.log(res.data.finalflats);
             setFlats(res.data.finalflats);
@@ -67,7 +67,7 @@ export const Flats=()=>{
     
     }
     const sortDesc=()=>{
-        axios.get("http://localhost:2345/flats/sort/dsc")
+        axios.get("https://evaluationsserver.herokuapp.com/flats/sort/dsc")
         .then(res=>{
             
             setFlats(res.data.finalflats);
@@ -87,7 +87,7 @@ export const Flats=()=>{
          }
         setPage(newvalue);
 
-        axios.get(`http://localhost:2345/flats?page=${newvalue}`)
+        axios.get(`https://evaluationsserver.herokuapp.com/flats?page=${newvalue}`)
         .then(res=>{
             
             setFlats(res.data.flats);
