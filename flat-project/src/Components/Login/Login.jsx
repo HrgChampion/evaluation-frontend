@@ -13,18 +13,20 @@ export const Login=()=>{
     })
     const dispatch=useDispatch();
     const navigate = useNavigate();
+
     const addUser=(e)=>{
         e.preventDefault();
-        axios.post(`http://localhost:2345/login`,{
+        axios.post(`https://evaluationsserver.herokuapp.com/login`,{
             email:user.email,
             password:user.password,
 
         })
         .then(res=>{
-            dispatch(setUserToken(res.token));
-        localStorage.setItem("user_token", res.token);
-        navigate("/");
             console.log(res);
+            //dispatch(setUserToken(res.data.token));
+        localStorage.setItem("user_token", res.data.token);
+        navigate("/");
+            
         })
         .catch(err=>{
             console.log(err);

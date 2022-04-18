@@ -9,7 +9,7 @@ export const Flatreducer = (state = initState, action) => {
         case SET_FLATS:
             return {
                 ...state,
-                flats: action.payload
+                flat: action.payload
             }
         default:
             return state;

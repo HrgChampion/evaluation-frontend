@@ -11,7 +11,7 @@ export const Register=()=>{
 
     const addUser=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:2345/register",{
+        axios.post("https://evaluationsserver.herokuapp.com/register",{
             email:user.email,
             password:user.password,
 
