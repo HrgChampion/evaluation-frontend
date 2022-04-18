@@ -13,7 +13,7 @@ export const RegisterReducer = (state = initState, action) => {
                 Register: action.payload
             }
         case SET_USER:
-            return {...store, user_token: payload};
+            return {...state, user_token: action.payload};
         default:
             return state;
     }

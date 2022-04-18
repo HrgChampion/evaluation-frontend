@@ -23,7 +23,7 @@ export const Login=()=>{
         })
         .then(res=>{
             console.log(res);
-            //dispatch(setUserToken(res.data.token));
+            dispatch(setUserToken(res.data.token));
         localStorage.setItem("user_token", res.data.token);
         navigate("/");
             
