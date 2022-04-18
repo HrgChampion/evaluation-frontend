@@ -1,5 +1,8 @@
 import axios from "axios"
 import { useState } from "react"
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setUserToken } from "../../Redux/Register/Registeraction";
 
 export const Login=()=>{
 
@@ -8,7 +11,8 @@ export const Login=()=>{
         password:"",
 
     })
-
+    const dispatch=useDispatch();
+    const navigate = useNavigate();
     const addUser=(e)=>{
         e.preventDefault();
         axios.post(`http://localhost:2345/login`,{
@@ -17,6 +21,9 @@ export const Login=()=>{
 
         })
         .then(res=>{
+            dispatch(setUserToken(res.token));
+        localStorage.setItem("user_token", res.token);
+        navigate("/");
             console.log(res);
         })
         .catch(err=>{

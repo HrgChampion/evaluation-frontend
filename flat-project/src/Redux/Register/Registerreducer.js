@@ -1,7 +1,8 @@
 import {REGISTER} from './Registeraction';
-
+import {SET_USER} from './Registeraction';
 const initState = {
-    Register:{}
+    Register:{},
+    user_token: ""
 }
 
 export const RegisterReducer = (state = initState, action) => {
@@ -11,6 +12,8 @@ export const RegisterReducer = (state = initState, action) => {
                 ...state,
                 Register: action.payload
             }
+        case SET_USER:
+            return {...store, user_token: payload};
         default:
             return state;
     }

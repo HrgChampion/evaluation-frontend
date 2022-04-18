@@ -8,14 +8,22 @@ import Select from '@mui/material/Select';
 import { useDispatch ,useSelector} from "react-redux";
 import "./Flats.css";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { setFlat } from '../../Redux/Flats/Flataction';
+
+
 export const Flats=()=>{
     const [flats,setFlats]=useState([]);
     const [page,setPage]=useState(1);
     const [limit,setLimit]=useState(0);
+    const navigate = useNavigate();
+
+
+    const flat=useSelector(state=>state.flat.flat);
 
     const dispatch=useDispatch();
     useEffect(()=>{
+        if(!localStorage.getItem("user_token")) navigate("/login");
         getALLFlats();
     },[]);
 
@@ -24,6 +32,7 @@ export const Flats=()=>{
         .then(res=>{
             
             setFlats(res.data.flats);
+            dispatch(setFlat(res.data.flats));
             setLimit(res.data.totalPages);
         })
         .catch(err=>{

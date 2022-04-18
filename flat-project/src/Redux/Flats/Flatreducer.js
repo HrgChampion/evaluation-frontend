@@ -1,7 +1,7 @@
 import {SET_FLATS} from "./Flataction";
 
 const initState = {
-    flats: []
+    flat: []
 }
 
 export const Flatreducer = (state = initState, action) => {
