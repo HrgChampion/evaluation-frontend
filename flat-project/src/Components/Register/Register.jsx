@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export const Register=()=>{
 
@@ -8,7 +9,7 @@ export const Register=()=>{
         password:"",
 
     })
-
+    const navigate = useNavigate(); 
     const addUser=(e)=>{
         e.preventDefault();
         axios.post("https://evaluationsserver.herokuapp.com/register",{
@@ -18,7 +19,7 @@ export const Register=()=>{
         })
         .then(res=>{
             console.log(res);
-            
+            navigate("/login");
         })
         .catch(err=>{
             console.log(err);
